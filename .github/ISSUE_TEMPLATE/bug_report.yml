@@ -1,0 +1,61 @@
+name: Bug Report
+description: 提交固件问题
+title: "[BUG] "
+labels: ["bug"]
+
+body:
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 平台
+      description: 请选择平台
+      options:
+        - Qualcomm
+        - MediaTek
+        - Rockchip
+        - X86
+    validations:
+      required: true
+
+  - type: input
+    id: device
+    attributes:
+      label: 设备型号
+      placeholder: 例如：Redmi AX6000 / RAX3000M / X86_64
+    validations:
+      required: true
+
+  - type: input
+    id: firmware
+    attributes:
+      label: 固件版本
+      placeholder: 请填写后台界面显示的固件版本
+    validations:
+      required: true
+
+  - type: input
+    id: kernel
+    attributes:
+      label: 内核版本
+      placeholder: 请填写后台界面显示的内核版本
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述
+      description: 请详细描述问题现象
+      placeholder: 例如：WiFi 无法启动、编译失败、5G 频段消失等
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志
+      description: 请粘贴完整日志
+      placeholder: 请粘贴完整日志
+      render: shell
+    validations:
+      required: false
